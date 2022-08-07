@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.js": "/static/js/main.781fb1d4.js",
+    "static/media/pepperoni-pizza.png": "/static/media/pepperoni-pizza.b9c4efc5cc74c7e16e87.png",
+    "static/media/chicken-tenders.png": "/static/media/chicken-tenders.2ff1896857a8f4ff34a8.png",
+    "static/media/yes.aac": "/static/media/yes.012ac54a64a0137c8443.aac",
+    "static/media/no.aac": "/static/media/no.59a877d4e6b09b15c6e1.aac",
+    "static/media/chicken.mp3": "/static/media/chicken.52d0c4f5fea328ddb3d3.mp3",
+    "static/media/pizza.mp3": "/static/media/pizza.72246f4d500c6cecb105.mp3",
+    "index.html": "/index.html",
+    "main.781fb1d4.js.map": "/static/js/main.781fb1d4.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.781fb1d4.js"
+  ]
+}
