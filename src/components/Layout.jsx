@@ -31,18 +31,12 @@ const useStyles = makeStyles(() => ({
     
     width: "100%",
     // height: "100%",
-    height: "470px",
+    // height: "470px",
     // height: {sizeWindow},
     // minHeight: '100vh',
     minHeight: '430px',
     overflow: 'hidden',
-    aspectRatio: "4/5 !important",
-    
-  },
-  popover: {
-    pointerEvents: 'none',
-    width: "150px",
-    height: "70px",
+    // aspectRatio: "4/5 !important",
     
   },
   
@@ -51,18 +45,7 @@ const useStyles = makeStyles(() => ({
 // const classes = useStyles();
 
 function Layout() {
-  // console.log('Layout')
-  const [material, setMaterial] = useState({
-    zPrime: "Pizza",
-    ZSec: "chicken", 
-  });
-  const [matScene, setMatScene] = useState(false);
-
-//   const [download, setDownload] = useState(false);
-//   const [limitDowload, setLimitDowload] = useState(false);
-//   const [sceneIncrement, setSceneIncrement] = useState(0);
-//   const [spinner, setSpinner] = useState(false);
-//   const [UrlConfig, setUrlConfig] = useState('');
+  
 
   
 
@@ -70,101 +53,45 @@ function Layout() {
   return (
 
     // <div className={classes.root} style={{backgroundColor: '#ffffff'}} > {/*}style={{backgroundColor: '#F0E9F5'}}>*/}
-    <div  style={{backgroundColor: '#ffffff', width: "100%", hieght: "100%"}} > {/*}style={{backgroundColor: '#F0E9F5'}}>*/}
+    <div  style={{backgroundColor: '#ffffff', }} > {/*}style={{backgroundColor: '#F0E9F5'}}>*/}
+      <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+        
+      
 
-
-      <Grid
+      {/* <Grid
         container
-        spacing={4}
-        flexgrow= {3}
-        justifyContent="center"
-        direction="row-reverse"
+        rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}
         
-        style={{ padding: 10, alignContent:"center",  }}
-      >
+        spacing={1}
+        // flexgrow= {3}
+        justifyContent="center"
+        // direction="row-reverse"
+        // alignItems='flex-start' 
+        // alignContent='flex-start' 
+
+        style={{ padding: 10,  }}
+        // style={{ padding: 10, alignContent:"center",  }}
+      > */}
         
 
-        <Grid container item xs={10} sm={4} >
-          <Grid item>
+         <Grid  container > {/* item xs={2} sm={4} md={4}  > */}
+          {/* <Grid item > */}
             <Paper
             color="secondary"
-            elevation={5} 
+            // elevation={5} 
             style={{
+              margin:75,
               borderRadius: 75,
               backgroundColor: '#eeeeee',
             }}
             >
-                {/* <Box sx={{
-                    width: 300,
-                    height: 300,
-                    backgroundColor: 'primary.dark',
-                    '&:hover': {
-                      backgroundColor: 'primary.main',
-                      opacity: [0.9, 0.8, 0.7],
-                    },
-                    }}
-                  > */}
-                  <ImageCards material={material}  />
-                {/* </Box> */}
+                  <ImageCards  />
               </Paper>
             </Grid>
+
         </Grid>
-
-        
-        
-
-
-{/* bottom menues */}
-      {/* <Grid container 
-      justifyContent="center"
-      direction="row" 
-      // justifyContent="flex-end"
-      flexgrow = {3}
-      spacing={2} 
-      style={{ padding: 10, 
-        // background: 'black',
-       }}
-       >
-
-          <Grid  item  
-          
-          flexgrow = {3}
-          flexwrap="wrap"
-          style={{padding: '10px', alignItems: 'center', 
-            }}>
-            
-            <Paper
-              color="secondary"
-              elevation={5} 
-              style={{
-                borderRadius: 75,
-                backgroundColor: '#eeeeee',
-                
-              }}
-              >
-              
-
-                <MaterialMenu 
-                setMaterial={setMaterial} 
-                material={material} 
-                setMatScene={setMatScene} //Landscape trigger
-                asyncLogParams={asyncLogParams}
-                setUrlConfig={setUrlConfig}
-                />
-                
-            </Paper>
-
-          </Grid>
-
-
-          <Grid container item xs={2} sm={2} 
-          style={{  padding: '10px 1rem 10px 10px', alignContent: 'center',  }} >
-          <DownloadButton setDownload={setDownload} spinner={spinner} setLimitDowload={setLimitDowload}/>
-          </Grid >
-        </Grid > */}
-
-      </Grid>
-      {/* </Grid> */}
+    </Box>
 
     </div>
   );
