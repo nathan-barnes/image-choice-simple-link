@@ -19,7 +19,7 @@ export default function MaterialMenu(props) {
 const menuItems = Object.values(Materials).map((obj, idx) => (
     // <Grid  item xs={2} sm={4} md={4} key={idx} flexgrow = {1}>
       <div key={idx}>
-        <ImageCardFlip name={obj.name} source={obj.imageUrl} audioSrc={obj.link}/>
+        <ImageCardFlip name={obj.name} source={obj.imageUrl} audioSrc={obj.link} type={obj.material}/>
         {/* </Grid> */}
       </div>
 ))
