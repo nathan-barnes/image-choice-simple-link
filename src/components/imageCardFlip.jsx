@@ -39,22 +39,8 @@ const playIt = (src) => {
         }, 3000);
 
 
-        // let uris = [iNeed, audiourl.audioSrc],
-        // proms = uris.map(uri => fetch(uri).then(r => r.blob()));
-        // console.log('proms',proms)
-
-        // Promise.all(proms).then(blobs => {
-        //   console.log('blobs',blobs)
-        //   let blob = new Blob([blobs[0], blobs[1]])
-        //   console.log('blob', blob)
-        //   let blobUrl = URL.createObjectURL(blob)
-        //   const audio = new Audio(blobUrl);
-        //   audio.play();
-        // })
         
     } else {
-      // let blob = new Blob([iNeed, audiourl])
-        // let blobUrl = URL.createObjectURL(blob)
         const audio = new Audio(audiourl.audioSrc);
         audio.play();
     }
@@ -109,10 +95,6 @@ const ImageButton = ({  source, audioSrc }) => (
 
 const ImageButtonFlip = ({  name,  }) => (
     
-    // <Grid item
-    //     flexgrow= {1}
-    //     style={{ padding: 10, alignContent:"center",  }}
-    //   >
 
       <Card onClick={handleClick} sx={{ height:250, verticalAlign: 'middle' }}>
       {/* <Card onClick={handleClick} sx={{ maxWidth: 345, height:250 }}> */}
@@ -123,15 +105,9 @@ const ImageButtonFlip = ({  name,  }) => (
         </div>
       </Card>
 
-//   </Grid>
 )
 
 
-
-// Object.values(material).map((choice, idx) => {( console.log( choice, idx))})
-   
- 
-// console.log("MaterialMenu", name)
 
   const menuItems = (name, source, type) => (
     // console.log("MaterialMenu", name)
@@ -169,15 +145,11 @@ const ImageButtonFlip = ({  name,  }) => (
   return (
     
     <div >
-        {/* <Grid  item 
-            xs={6}
-            // flexgrow = {3}
-            // style={{padding: '5px', width:'250px', height:'250px', alignContent:"center"}}
-            > */}
 
-              {menuItems(name, source, type)}  
 
-        {/* </Grid> */}
+      {menuItems(name, source, type)}  
+
+
     </div>
     
   );

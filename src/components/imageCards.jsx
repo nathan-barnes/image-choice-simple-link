@@ -8,15 +8,19 @@ import {  Grid, Paper, Box, Button, Card, CardActionArea, CardMedia, Typography 
 // import ReactCardFlip from 'react-card-flip';
 import ImageCardFlip from './imageCardFlip';
 
+// const sceneBuildFunc = (matString, sch) => {
+//   const temp = SceneBuild.filter(v => v.view === matString).filter(v => v.scheme === sch).map(choice => choice.imageUrl.default)
+//   const temp2 = SceneBuild.filter(v => v.view === matString).filter(v => v.scheme === sch).map(choice => choice.imageUrl2.default)
+//   return [temp, temp2]
+// }
 
-
-export default function MaterialMenu(props) {
+export default function MaterialMenu({type}) {
 
 
 
 // Object.values(material).map((choice, idx) => {( console.log( choice, idx))})
    
-const menuItems = Object.values(Materials).map((obj, idx) => (
+const menuItems = Object.values(Materials).filter(v => v.type === type).map((obj, idx) => (
     // <Grid  item xs={2} sm={4} md={4} key={idx} flexgrow = {1}>
       <div key={idx}>
         <ImageCardFlip name={obj.name} source={obj.imageUrl} audioSrc={obj.link} type={obj.material}/>

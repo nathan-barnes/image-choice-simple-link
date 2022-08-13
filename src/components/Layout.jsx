@@ -6,6 +6,7 @@ import {
   Box
   
 } from "@mui/material";
+import Materials from '../collections/materials'
 
 // import {DownloadButton} from "../utils/Download";
 
@@ -17,6 +18,9 @@ import ImageCards from "./imageCards";
 // import asyncLogParams from "../components-logging/firebaseRealtime";
 
 // const workerJimpImage = new window.Worker('../utils/JimpImage.js')
+
+import { Outlet, Link } from 'react-router-dom';
+// App.jsx
 
 
 
@@ -45,38 +49,33 @@ const useStyles = makeStyles(() => ({
 // const classes = useStyles();
 
 function Layout() {
-  
 
-  
-
+  // const decision = Object.values(Materials).filter(v => v.type === 'Category').filter(v => v.name === 'neutral').map((obj, idx) => (
+  const Feelings = Object.values(Materials).filter(v => v.name === 'neutral').map((obj, idx) => (
+      <div key={idx} style={{ width: '250px',}}>
+        <img  src={obj.imageUrl} alt={obj.name} style={{ width: '250px',}}/>
+      </div>
+  ))
+  const Decision = Object.values(Materials).filter(v => v.name === 'decision').map((obj, idx) => (
+      <div key={idx} style={{ width: '250px',}}>
+        <img  src={obj.imageUrl} alt={obj.name} style={{ width: '250px',}} />
+      </div>
+  ))
+  const Wants = Object.values(Materials).filter(v => v.name === 'Want').map((obj, idx) => (
+      <div key={idx} >
+        <img  src={obj.imageUrl} alt={obj.name} style={{ width: '250px',}}/>
+      </div>
+  ))
 
   return (
 
     // <div className={classes.root} style={{backgroundColor: '#ffffff'}} > {/*}style={{backgroundColor: '#F0E9F5'}}>*/}
     <div  style={{backgroundColor: '#ffffff', }} > {/*}style={{backgroundColor: '#F0E9F5'}}>*/}
+     <nav>
       <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-        
-      
-
-      {/* <Grid
-        container
-        rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-        
-        spacing={1}
-        // flexgrow= {3}
-        justifyContent="center"
-        // direction="row-reverse"
-        // alignItems='flex-start' 
-        // alignContent='flex-start' 
-
-        style={{ padding: 10,  }}
-        // style={{ padding: 10, alignContent:"center",  }}
-      > */}
-        
-
-         <Grid  container > {/* item xs={2} sm={4} md={4}  > */}
-          {/* <Grid item > */}
+        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+          <Grid  container > {/* item xs={2} sm={4} md={4}  > */}
+            {/* <Grid item > */}
             <Paper
             color="secondary"
             // elevation={5} 
@@ -86,13 +85,21 @@ function Layout() {
               backgroundColor: '#eeeeee',
             }}
             >
-                  <ImageCards  />
+                <Link to="/decision">
+                  {Decision}
+                </Link> 
+                <Link to="/feelings">
+                  {Feelings}
+                  </Link> 
+                <Link to="/wants">
+                  {Wants}
+                  </Link>
+                {/* <ImageCards  /> */}
               </Paper>
             </Grid>
-
-        </Grid>
-    </Box>
-
+          </Grid>
+       </Box>
+      </nav>
     </div>
   );
 
