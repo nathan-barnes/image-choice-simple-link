@@ -3,6 +3,9 @@ import React, {useState, useEffect, useCallback, Fragment } from "react";
 import Materials from '../collections/materials'
 import GetKeyByValue from '../utils/getKeyByValue'
 import iNeed from '../static/iNeed.aac'
+import soundI from '../static/I.mp3'
+import soundWant from '../static/Want.mp3'
+import soundFeel from '../static/feel.mp3'
 
 import {  Grid, Paper, Box, Button, Card, CardActionArea, CardMedia, Typography   } from "@mui/material";
 import ReactCardFlip from 'react-card-flip';
@@ -25,22 +28,47 @@ const playIt = (src) => {
 
   const PlayAudio = (audiourl, type) => {
     // if (isFlippy){
-    if(audiourl.type != 'Decision'){
-        console.log('audiourl',iNeed, audiourl.audioSrc)
 
+    console.log(audiourl.type)
 
-        const audioNeed = new Audio(iNeed);
+    if(audiourl.type == 'Food'){
+        // console.log('audiourl',iNeed, audiourl.audioSrc)
+
+        const audioI = new Audio(soundI);
+        const audioWant = new Audio(soundWant);
         const audio = new Audio(audiourl.audioSrc);
 
-        audioNeed.play()
-
+        audioI.play()
+        setTimeout(function() {
+          audioWant.play();
+        }, 500);
         setTimeout(function() {
           audio.play();
-        }, 3000);
+        }, 1200);
 
 
         
-    } else {
+    } 
+    if(audiourl.type == 'Feelings'){
+        // console.log('audiourl',iNeed, audiourl.audioSrc)
+
+        const audioI = new Audio(soundI);
+        const audioFeel = new Audio(soundFeel);
+        const audio = new Audio(audiourl.audioSrc);
+
+        audioI.play()
+        setTimeout(function() {
+          audioFeel.play();
+        }, 500);
+        setTimeout(function() {
+          audio.play();
+        }, 1200);
+
+
+        
+    } 
+    
+    else {
         const audio = new Audio(audiourl.audioSrc);
         audio.play();
     }

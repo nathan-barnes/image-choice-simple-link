@@ -5,7 +5,8 @@ export const sceneBuild = [
     imageUrl: require('../static/Yes-thumbs-up.png'),
     flavorText:
       'One of manada.',
-    link: require('../static/yes.aac'),
+    // link: require('../static/yes.aac'),
+    link: require('../static/Yes.mp3'),
   },
   {
     name: 'No',
@@ -13,7 +14,8 @@ export const sceneBuild = [
     imageUrl: require('../static/no-thumbs-down.png'),
     flavorText:
       'One of manada.',
-    link: require('../static/no.aac'),
+    link: require('../static/No.mp3'),
+    // link: require('../static/no.aac'),
   },
   {
     name: 'Pizza',
@@ -45,7 +47,7 @@ export const sceneBuild = [
     imageUrl: require('../static/face-happy.png'),
     flavorText:
       'One of many custom patinas',
-    link: require('../static/strawberry.mp3'),
+    link: require('../static/feel-happy.mp3'),
   },
   {
     name: 'sad',
@@ -53,7 +55,7 @@ export const sceneBuild = [
     imageUrl: require('../static/face-sad.png'),
     flavorText:
       'One of many custom patinas',
-    link: require('../static/strawberry.mp3'),
+    link: require('../static/feel-sad.mp3'),
   },
   {
     name: 'mad',
@@ -61,7 +63,7 @@ export const sceneBuild = [
     imageUrl: require('../static/face-mad.png'),
     flavorText:
       'One of many custom patinas',
-    link: require('../static/strawberry.mp3'),
+    link: require('../static/feel-mad.mp3'),
   },
   {
     name: 'neutral',
