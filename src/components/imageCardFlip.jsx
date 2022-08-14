@@ -68,7 +68,7 @@ const playIt = (src) => {
         
     } 
     
-    else {
+    if(audiourl.type == 'Decision'){
         const audio = new Audio(audiourl.audioSrc);
         audio.play();
     }
