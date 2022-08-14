@@ -27,8 +27,9 @@ import { Outlet, Link } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
   root: {
-    overflow: 'hidden',
-    minHeight: '400px',
+    width: '150px',
+    margin: '25px',
+    
   },
 
   paper: {
@@ -43,6 +44,10 @@ const useStyles = makeStyles(() => ({
     // aspectRatio: "4/5 !important",
     
   },
+
+  img: {
+    width: '150px',
+  }
   
 }));
 
@@ -50,20 +55,23 @@ const useStyles = makeStyles(() => ({
 
 function Layout() {
 
+  const classes = useStyles()
+
+
   // const decision = Object.values(Materials).filter(v => v.type === 'Category').filter(v => v.name === 'neutral').map((obj, idx) => (
   const Feelings = Object.values(Materials).filter(v => v.name === 'neutral').map((obj, idx) => (
-      <div key={idx} style={{ width: '250px',}}>
-        <img  src={obj.imageUrl} alt={obj.name} style={{ width: '250px',}}/>
+      <div key={idx} className={classes.root} >
+        <img  src={obj.imageUrl} alt={obj.name} className={classes.img} />
       </div>
   ))
   const Decision = Object.values(Materials).filter(v => v.name === 'decision').map((obj, idx) => (
-      <div key={idx} style={{ width: '250px',}}>
-        <img  src={obj.imageUrl} alt={obj.name} style={{ width: '250px',}} />
+      <div key={idx} className={classes.root} >
+        <img  src={obj.imageUrl} alt={obj.name} className={classes.img} />
       </div>
   ))
   const Wants = Object.values(Materials).filter(v => v.name === 'Want').map((obj, idx) => (
-      <div key={idx} >
-        <img  src={obj.imageUrl} alt={obj.name} style={{ width: '250px',}}/>
+      <div key={idx} className={classes.root} >
+        <img  src={obj.imageUrl} alt={obj.name} className={classes.img} />
       </div>
   ))
 
@@ -83,6 +91,9 @@ function Layout() {
               margin:75,
               borderRadius: 75,
               backgroundColor: '#eeeeee',
+              // alignItems: 'center',
+              // alignContent: 'center',
+              flexDirection: 'row',
             }}
             >
                 <Link to="/decision">
